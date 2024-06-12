@@ -11,10 +11,12 @@ const {
   searchTasks,
 } = require("../controllers/TasksController");
 
-router.route("/").get(getTasks).post(addTask);
-router.route("/:id").delete(deleteTask).patch(updateTask);
-router.route("/filter").get(getFilteredTasks);
-router.route("/sort").get(sortTasks);
-router.route("/search").get(searchTasks);
+const { verifyUser } = require("../middleware/Middleware");
+
+router.route("/").get([verifyUser], getTasks).post([verifyUser], addTask);
+router.route("/:id").delete([verifyUser], deleteTask).patch([verifyUser], updateTask);
+router.route("/filter").get([verifyUser], getFilteredTasks);
+router.route("/sort").get([verifyUser], sortTasks);
+router.route("/search").get([verifyUser], searchTasks);
 
 module.exports = router;
