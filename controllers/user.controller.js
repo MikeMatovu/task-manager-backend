@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const User = require("../models/user.model");
 const { sendResponseError } = require("../middleware/Middleware");
 const { checkPassword, newToken } = require("../utils/utilityFunctions");
 

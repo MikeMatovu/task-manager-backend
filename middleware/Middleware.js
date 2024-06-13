@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user.model");
 const { verifyToken } = require("../utils/utilityFunctions");
 
 const sendResponseError = (statusCode, msg, res) => {

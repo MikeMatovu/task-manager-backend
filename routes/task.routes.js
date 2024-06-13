@@ -9,7 +9,7 @@ const {
   getFilteredTasks,
   sortTasks,
   searchTasks,
-} = require("../controllers/TasksController");
+} = require("../controllers/tasks.controller");
 
 const { verifyUser } = require("../middleware/Middleware");
 
